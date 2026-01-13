@@ -30,29 +30,35 @@ import javax.inject.Inject;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
 import net.runelite.client.config.ConfigManager;
+import net.runelite.client.input.KeyManager;
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
 
 @Slf4j
 @PluginDescriptor(
-	name = "Chat Space Blocker"
+	name = "Chat Space Blocker",
+	description = "Prevents entering whitespace as the first chat character",
+	tags = {"chat", "space", "whitespace"}
 )
 public class ChatSpaceBlockerPlugin extends Plugin
 {
 	@Inject private Client client;
 	@Inject private ChatSpaceBlockerConfig config;
+	@Inject private KeyManager keyManager;
 
+	private ChatSpaceBlockerKeyListener spaceBlockerKeyListener;
 
 	@Override
 	protected void startUp() throws Exception
 	{
-
+		spaceBlockerKeyListener = new ChatSpaceBlockerKeyListener(client, config);
+		keyManager.registerKeyListener(spaceBlockerKeyListener);
 	}
 
 	@Override
 	protected void shutDown() throws Exception
 	{
-
+		keyManager.unregisterKeyListener(spaceBlockerKeyListener);
 	}
 
 	@Provides

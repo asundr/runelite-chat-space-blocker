@@ -2,6 +2,13 @@
 
 This RuneLite plugin prevents players from entering spaces as the first character of chat input.
 
+![image](https://img.shields.io/endpoint?url=https://api.runelite.net/pluginhub/shields/installs/plugin/chat-space-blocker)
+![image](https://img.shields.io/endpoint?url=https://api.runelite.net/pluginhub/shields/rank/plugin/chat-space-blocker)
+
+
+# Configuration
+* Option to bypass block by holding shift
+* Option to treat blank text entry as an entering the first space
 
 <hr>
 

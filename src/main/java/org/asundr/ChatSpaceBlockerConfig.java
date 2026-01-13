@@ -38,5 +38,20 @@ public interface ChatSpaceBlockerConfig extends Config
 	)
 	String SECTION_GENERAL = "General";
 
+	@ConfigItem(
+			keyName = "bypassWithShift",
+			name = "Bypass with Shift",
+			description = "If enabled, spaces can be entered at the start of a chat message by holding shift",
+			section = SECTION_GENERAL
+	)
+	default boolean bypassWithShift() { return true; }
+
+	@ConfigItem(
+			keyName = "enableForBlank",
+			name = "Enable for blank chat",
+			description = "If enabled, treats entirely whitespace chat input as an empty prefix",
+			section = SECTION_GENERAL
+	)
+	default boolean enableForBlank() { return true; }
 
 }
