@@ -29,7 +29,9 @@ import com.google.inject.Provides;
 import javax.inject.Inject;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
+import net.runelite.client.callback.ClientThread;
 import net.runelite.client.config.ConfigManager;
+import net.runelite.client.eventbus.EventBus;
 import net.runelite.client.input.KeyManager;
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
@@ -43,7 +45,9 @@ import net.runelite.client.plugins.PluginDescriptor;
 public class ChatSpaceBlockerPlugin extends Plugin
 {
 	@Inject private Client client;
+	@Inject private ClientThread clientThread;
 	@Inject private ChatSpaceBlockerConfig config;
+	@Inject private EventBus eventBus;
 	@Inject private KeyManager keyManager;
 
 	private ChatSpaceBlockerKeyListener spaceBlockerKeyListener;
@@ -53,11 +57,13 @@ public class ChatSpaceBlockerPlugin extends Plugin
 	{
 		spaceBlockerKeyListener = new ChatSpaceBlockerKeyListener(client, config);
 		keyManager.registerKeyListener(spaceBlockerKeyListener);
+		eventBus.register(spaceBlockerKeyListener);
 	}
 
 	@Override
 	protected void shutDown() throws Exception
 	{
+		eventBus.unregister(spaceBlockerKeyListener);
 		keyManager.unregisterKeyListener(spaceBlockerKeyListener);
 	}
 
