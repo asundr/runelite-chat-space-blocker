@@ -66,7 +66,7 @@ public interface ChatSpaceBlockerConfig extends Config
 	@ConfigItem(
 			keyName = KEY_CUSTOM_WIDGET_IDS,
 			name = "Disable for Widget ID",
-			description = "Allows spaces to be entered when widgets with the following IDs are open. Enter each ID on a separate line in the format: group,child",
+			description = "Allows spaces to be entered when widgets with the specified IDs are open.<br>Enter each ID on a separate line in the format: group,child",
 			section = SECTION_ADVANCED
 	)
 	default String customWidgetPairs() { return ""; }

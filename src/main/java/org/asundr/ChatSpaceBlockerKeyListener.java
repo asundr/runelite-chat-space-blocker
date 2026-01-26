@@ -48,8 +48,7 @@ public class ChatSpaceBlockerKeyListener implements KeyListener
     {
         int group;
         int child = 0;
-        WidgetPairId(int group, int child) { this.group = group; this.child = child;}
-        WidgetPairId(int group) { this.group = group; }
+        WidgetPairId(int group, int child) { this.group = group; this.child = child; }
     }
 
     private static Client client;
