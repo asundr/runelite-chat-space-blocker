@@ -30,13 +30,22 @@ import net.runelite.client.config.ConfigGroup;
 import net.runelite.client.config.ConfigItem;
 import net.runelite.client.config.ConfigSection;
 
-@ConfigGroup("ChatSpaceBlocker")
+@ConfigGroup(ChatSpaceBlockerConfig.CONFIG_GROUP)
 public interface ChatSpaceBlockerConfig extends Config
 {
+	String CONFIG_GROUP = "ChatSpaceBlocker";
+	String KEY_CUSTOM_WIDGET_IDS = "customWidgetPairs";
 	@ConfigSection(
 		name = "General", description = "General settings", position = -1
 	)
 	String SECTION_GENERAL = "General";
+
+	@ConfigSection(
+			name = "Advanced", description = "Advanced settings", position = 1000
+	)
+	String SECTION_ADVANCED = "advanced";
+
+	////
 
 	@ConfigItem(
 			keyName = "bypassWithShift",
@@ -53,5 +62,13 @@ public interface ChatSpaceBlockerConfig extends Config
 			section = SECTION_GENERAL
 	)
 	default boolean enableForBlank() { return true; }
+
+	@ConfigItem(
+			keyName = KEY_CUSTOM_WIDGET_IDS,
+			name = "Disable for Widget ID",
+			description = "Allows spaces to be entered when widgets with the following IDs are open. Enter each ID on a separate line in the format: group,child",
+			section = SECTION_ADVANCED
+	)
+	default String customWidgetPairs() { return ""; }
 
 }
