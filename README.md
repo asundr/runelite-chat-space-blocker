@@ -8,7 +8,15 @@ This RuneLite plugin prevents players from entering spaces as the first characte
 # Configuration
 * Option to bypass block by holding shift
 * Option to treat blank text entry as an entering the first space
+* Custom Widget IDs for unhandled menu [exceptions](https://github.com/asundr/runelite-chat-space-blocker/#widget-exceptions)
 
+# <span id="widget-exceptions">Widget exceptions</span>
+The plugin will not block space inputs when the following widgets are open:
+* Text entry prompts (such as direct messages to other players)
+* RuneScape settings menu
+
+$\textcolor{orange}{\textsf{If spaces are blocked in a menu that should be listed here please create an }}$ [issue](https://github.com/asundr/runelite-chat-space-blocker/issues) $\textcolor{orange}{\textsf{specifying the menu, how to activate it,}}$
+$\textcolor{orange}{\textsf{and any additional data such as the widget's group ID, child ID and optionally an image of the widget.}}$
 <hr>
 
 ### My RuneLite plugins
