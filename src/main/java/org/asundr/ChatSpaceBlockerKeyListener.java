@@ -56,6 +56,7 @@ public class ChatSpaceBlockerKeyListener implements KeyListener
     private static ChatSpaceBlockerConfig config;
 
     private static final ArrayList<WidgetPairId> tickWidgetIds = new ArrayList<>(Arrays.asList(
+            new WidgetPairId(InterfaceID.SETTINGS, 0),                      // options box
             new WidgetPairId(InterfaceID.CHATBOX, WIDGET_CHILD_MESSAGE)          // prompt box
     ));
     private static final ArrayList<WidgetPairId> userAddedWidgetIds = new ArrayList<>();
