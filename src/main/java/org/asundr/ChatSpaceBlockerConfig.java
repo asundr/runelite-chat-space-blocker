@@ -66,7 +66,9 @@ public interface ChatSpaceBlockerConfig extends Config
 	@ConfigItem(
 			keyName = KEY_CUSTOM_WIDGET_IDS,
 			name = "Disable for Widget ID",
-			description = "Allows spaces to be entered when widgets with the specified IDs are open.<br>Enter each ID on a separate line in the format: group,child",
+			description = "Allows spaces to be entered when widgets with the specified IDs are open.<br>Enter each ID on a separate line in the format: group,child<br><br>" +
+					"<span style=\"color:#9090FF\">If these widgets should be handled by default, please create an issue on the plugin's GitHub page including the group,child:<br>" +
+					"https://github.com/asundr/runelite-chat-space-blocker/issues</span>",
 			section = SECTION_ADVANCED
 	)
 	default String customWidgetPairs() { return ""; }
