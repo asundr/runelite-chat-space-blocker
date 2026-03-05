@@ -12,7 +12,7 @@ This RuneLite plugin prevents players from entering spaces as the first characte
 
 # <span id="widget-exceptions">Widget exceptions</span>
 The plugin will not block space inputs when the following widgets are open:
-* Text entry prompts (such as direct messages to other players)
+* Text entry prompts (such as direct messages to other players, finding clan)
 * RuneScape settings menu
 
 $\textcolor{orange}{\textsf{If spaces are blocked in a menu that should be listed here please create an }}$ [issue](https://github.com/asundr/runelite-chat-space-blocker/issues) $\textcolor{orange}{\textsf{specifying the menu, how to activate it,}}$

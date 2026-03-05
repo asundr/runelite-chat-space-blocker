@@ -42,7 +42,7 @@ import java.util.Arrays;
 
 public class ChatSpaceBlockerKeyListener implements KeyListener
 {
-    private static final int WIDGET_CHILD_MESSAGE = 38;
+    private static final int WIDGET_CHILD_MESSAGE = 39;
 
     static class WidgetPairId
     {
